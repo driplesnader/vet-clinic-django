@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ветеринарная клиника</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #5a9;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #5a9;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ветеринарная клиника "Заботливый друг"</h1>
+    <nav>
+        <a href="#owners">Владельцы</a>
+        <a href="#pets">Питомцы</a>
+        <a href="#vets">Ветеринары</a>
+        <a href="#appointments">Записи</a>
+        <a href="#medications">Лекарства</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div id="owners" class="card">
+        <h2>Владельцы</h2>
+        <!-- Здесь будет выводиться информация о владельцах -->
+        {% for owner in owners %}
+            <p>{{ owner.first_name }} {{ owner.last_name }} - {{ owner.phone }}</p>
+        {% endfor %}
+    </div>
+
+    <div id="pets" class="card">
+        <h2>Питомцы</h2>
+        <!-- Здесь будет выводиться информация о питомцах -->
+        {% for pet in pets %}
+            <p>{{ pet.name }} ({{ pet.species }}) - Владелец: {{ pet.owner.first_name }} {{ pet.owner.last_name }}</p>
+        {% endfor %}
+    </div>
+
+    <div id="vets" class="card">
+        <h2>Ветеринары</h2>
+        <!-- Здесь будет выводиться информация о ветеринарах -->
+        {% for vet in veterinarians %}
+            <p>Dr. {{ vet.first_name }} {{ vet.last_name }} - Специальность: {{ vet.speciality }}</p>
+        {% endfor %}
+    </div>
+
+    <div id="appointments" class="card">
+        <h2>Записи на прием</h2>
+        <!-- Здесь будет выводиться информация о записях -->
+        {% for appointment in appointments %}
+            <p>{{ appointment.pet.name }} - Дата приема: {{ appointment.appointment_date }} - Ветеринар: {{ appointment.veterinarian.first_name }} {{ appointment.veterinarian.last_name }}</p>
+        {% endfor %}
+    </div>
+
+    <div id="medications" class="card">
+        <h2>Лекарства</h2>
+        <!-- Здесь будет выводиться информация о лекарствах -->
+        {% for medication in medications %}
+            <p>{{ medication.name }} - Цена: {{ medication.price }} - Дозировка: {{ medication.dosage }}</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2023 Ветеринарная клиника "Заботливый друг". Все права защищены.</p>
+</footer>
+
+</body>
+</html>
