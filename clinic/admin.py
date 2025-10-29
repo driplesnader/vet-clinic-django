@@ -41,7 +41,7 @@ class AppointmentAdmin(admin.ModelAdmin):
         "veterinarian__last_name",
         "description",
     )
-    autocomplete_fields = ["veterinarian"]  # ✅ только ветеринар
+    autocomplete_fields = ["veterinarian"]  
     date_hierarchy = "appointment_date"
 
 
