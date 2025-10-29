@@ -1,19 +1,21 @@
-from django.shortcuts import render
-from .models import Owner, Pet, Veterinarian, Appointment, Medication
+from django.shortcuts import render, redirect
+from .models import Veterinarian
+from .forms import AppointmentForm
 
-def index(request):
-    owners = Owner.objects.all()
-    pets = Pet.objects.all()
-    veterinarians = Veterinarian.objects.all()
-    appointments = Appointment.objects.all()
-    medications = Medication.objects.all()
+def home(request):
+    vets = Veterinarian.objects.all()
+    form = AppointmentForm()
 
-    context = {
-        'owners': owners,
-        'pets': pets,
-        'veterinarians': veterinarians,
-        'appointments': appointments,
-        'medications': medications,
-    }
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
 
-    return render(request, 'index.html', context)
+    return render(request, 'home.html', {'vets': vets, 'form': form})
+
+
+def success(request):
+    return render(request, 'success.html')
+
+
