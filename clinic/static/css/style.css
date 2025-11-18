@@ -1,7 +1,7 @@
 :root {
     --bg: #fbf7f9;
     --card: #ffffff;
-    --accent: #ff7fa3; /* розовый */
+    --accent: #ff7fa3;
     --accent-2: #ffd5e0;
     --muted: #6b7280;
     --shadow: 0 6px 18px rgba(12, 20, 40, 0.06);
@@ -38,7 +38,6 @@ a {
     color: var(--muted);
 }
 
-/* Header */
 .site-header {
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -79,7 +78,7 @@ a {
     color: var(--muted);
 }
 
-/* Navigation */
+/* навигация */
 .main-nav a {
     margin-left: 18px;
     padding: 8px 12px;
@@ -91,7 +90,7 @@ a {
     background: rgba(255, 127, 163, 0.08);
 }
 
-/* Hero Section */
+/* кот на главной */
 .hero {
     background: linear-gradient(90deg, rgba(255, 127, 163, 0.06), rgba(255, 127, 163, 0.02));
     padding: 36px;
@@ -132,7 +131,7 @@ a {
     margin-bottom: 16px;
 }
 
-/* Buttons */
+/* кнопки */
 .btn {
     display: inline-block;
     padding: 10px 18px;
@@ -162,7 +161,7 @@ a {
     object-fit: cover;
 }
 
-/* Services Section */
+/* услуги */
 .services {
     margin-top: 34px;
 }
@@ -206,7 +205,7 @@ a {
     margin-bottom: 10px;
 }
 
-/* About Section */
+/* описание */
 .about {
     margin-top: 34px;
     display: flex;
@@ -235,7 +234,7 @@ a {
     margin-bottom: 12px;
 }
 
-/* Veterinarians Preview */
+/* ветеринары*/
 .vets-preview {
     margin-top: 34px;
 }
@@ -285,7 +284,7 @@ a {
     text-align: center;
 }
 
-/* Testimonials */
+/* отзывы */
 .testimonials {
     margin-top: 34px;
 }
@@ -368,7 +367,7 @@ a {
     object-fit: cover;
 }
 
-/* Success Page */
+/* после записи */
 .success-wrap {
     display: flex;
     justify-content: center;
@@ -383,7 +382,6 @@ a {
     text-align: center;
 }
 
-/* Footer */
 .site-footer {
     margin-top: 32px;
     background: transparent;
@@ -409,12 +407,10 @@ a {
     color: var(--muted);
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
     .vets-grid {
         justify-content: center;
     }
@@ -424,37 +420,21 @@ a {
     .hero-inner {
         flex-direction: column;
     }
-    
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
     .doctors-grid {
         grid-template-columns: 1fr;
     }
-    
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
     .header-inner {
         padding: 12px;
     }
-    
     .container {
         padding: 20px;
     }
-}
-.hero-image,
-.service-card img,
-.vet-avatar,
-.doctor-avatar,
-.brand-logo {
-    border: 3px solid #ff7fa3 !important;
-    background: #fff0f5 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
 }
 
 /* кот на главной */
@@ -485,6 +465,7 @@ a {
     height: 82px !important;
     object-fit: cover !important;
 }
+
 /* услуги */
 .dropdown {
     position: relative;
@@ -510,13 +491,14 @@ a {
 }
 
 .dropdown-content a:hover {
-    background: rgba(255,127,163,0.08);
+    background: rgba(255, 127, 163, 0.08);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-/* для услуг*/
+
+/* для услуг */
 .service-page {
     padding: 2rem 0;
 }
@@ -604,11 +586,11 @@ a {
     .service-layout {
         grid-template-columns: 1fr;
     }
-    
     .service-main-img {
         height: 300px;
     }
 }
+
 /* для описания врачей */
 .vet-description {
     color: var(--muted);
@@ -621,7 +603,7 @@ a {
     overflow: hidden;
 }
 
-/* дяя страницы врачей*/
+/* для страницы врачей */
 .doctor-card .vet-description {
     margin: 8px 0 12px 0;
     font-size: 14px;

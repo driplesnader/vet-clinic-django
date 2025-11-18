@@ -21,18 +21,20 @@
       </div>
 
       <nav class="main-nav">
-        <a href="{% url 'home' %}">Главная</a>
-        <a href="{% url 'vets' %}">Врачи</a>                   
-        <a href="{% url 'appointment' %}">Записаться</a>
-         <div class="dropdown">
+    <a href="{% url 'home' %}">Главная</a>
+    <a href="{% url 'vets' %}">Врачи</a>
+    <div class="dropdown">
         <a href="#">Услуги ▼</a>
         <div class="dropdown-content">
-            <a href="{% url 'castration' %}">Кастрация</a>
+            <a href="{% url 'surgery' %}">Хирургия</a>
+            <a href="{% url 'therapy' %}">Терапия</a>
             <a href="{% url 'sterilization' %}">Стерилизация</a>
+            <a href="{% url 'castration' %}">Кастрация</a>
         </div>
-    </div>        
-        <a href="/admin/">Админ</a>
-      </nav>
+    </div>
+    <a href="{% url 'appointment' %}">Записаться</a>
+    <a href="/admin/">Админ</a>
+</nav>
     </div>
   </header>
 

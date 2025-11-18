@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Хирургия — Добрый хвост{% endblock %}
+
+{% block content %}
+<div class="container service-page">
+    <div class="service-layout">
+        <div class="service-image">
+            <img src="{% static 'img/service2.jpg' %}" alt="Хирургия животных" class="service-main-img">
+        </div>
+
+        <div class="service-content">
+            <h1>Хирургия животных</h1>
+            
+            <div class="service-description">
+                <h3>О процедуре</h3>
+                <p>Хирургия — это комплекс оперативных вмешательств для лечения различных заболеваний и травм у животных с использованием современного оборудования и безопасной анестезии.</p>
+                
+                <h3>Преимущества:</h3>
+                <ul class="benefits-list">
+                    <li>✅ Современное оборудование и методики</li>
+                    <li>✅ Опытные хирурги с высокой квалификацией</li>
+                    <li>✅ Безопасная анестезия и контроль состояния</li>
+                    <li>✅ Быстрое восстановление после операции</li>
+                    <li>✅ Комплексный послеоперационный уход</li>
+                </ul>
+
+                <h3>Виды операций:</h3>
+                <ul>
+                    <li>Плановые операции (стерилизация, кастрация)</li>
+                    <li>Экстренные хирургические вмешательства</li>
+                    <li>Ортопедические операции</li>
+                    <li>Онкологические операции</li>
+                    <li>Офтальмологические операции</li>
+                </ul>
+
+                <div class="pricing">
+                    <h3>Стоимость хирургии</h3>
+                    <div class="price">от 2000 ₽</div>
+                </div>
+
+                <div class="service-actions">
+                    <a href="{% url 'appointment' %}" class="btn btn-primary">
+                        Записаться на консультацию
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

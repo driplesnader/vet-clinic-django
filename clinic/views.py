@@ -33,4 +33,9 @@ def castration(request):
 def sterilization(request):
     return render(request, "services/sterilization.html")
 
+def surgery(request):
+    return render(request, "services/surgery.html")
+
+def therapy(request):
+    return render(request, "services/therapy.html")
 

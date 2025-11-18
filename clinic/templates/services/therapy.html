@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Терапия — Добрый хвост{% endblock %}
+
+{% block content %}
+<div class="container service-page">
+    <div class="service-layout">
+        <div class="service-image">
+            <img src="{% static 'img/service1.jpg' %}" alt="Терапия животных" class="service-main-img">
+        </div>
+
+        <div class="service-content">
+            <h1>Терапия животных</h1>
+            
+            <div class="service-description">
+                <h3>О процедуре</h3>
+                <p>Терапия — это комплексное лечение заболеваний внутренних органов, инфекционных и хронических болезней с использованием современных диагностических методов и эффективных препаратов.</p>
+                
+                <h3>Преимущества:</h3>
+                <ul class="benefits-list">
+                    <li>✅ Точная диагностика заболеваний</li>
+                    <li>✅ Индивидуальный подход к лечению</li>
+                    <li>✅ Современные методы терапии</li>
+                    <li>✅ Контроль эффективности лечения</li>
+                    <li>✅ Профилактика осложнений</li>
+                </ul>
+
+                <h3>Направления терапии:</h3>
+                <ul>
+                    <li>Диагностика и лечение инфекций</li>
+                    <li>Гастроэнтерология</li>
+                    <li>Кардиология</li>
+                    <li>Дерматология</li>
+                    <li>Нефрология и урология</li>
+                </ul>
+
+                <div class="pricing">
+                    <h3>Стоимость терапии</h3>
+                    <div class="price">от 1500 ₽</div>
+                </div>
+
+                <div class="service-actions">
+                    <a href="{% url 'appointment' %}" class="btn btn-primary">
+                        Записаться на прием
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
