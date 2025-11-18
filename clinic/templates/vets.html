@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Наши ветеринары - VetCare{% endblock %}
+
+{% block content %}
+<section class="vets-section">
+    <div class="container">
+        <h1>Наши ветеринары</h1>
+        <p class="section-subtitle">Профессиональная команда специалистов</p>
+        
+        <div class="vets-grid">
+            {% for vet in veterinarians %}
+            <div class="vet-card">
+                <div class="vet-avatar">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="vet-info">
+                    <h3 class="vet-name">{{ vet.first_name }} {{ vet.last_name }}</h3>
+                    <p class="vet-speciality">{{ vet.speciality }}</p>
+                    <p class="vet-phone">
+                        <i class="fas fa-phone"></i>
+                        {{ vet.phone }}
+                    </p>
+                </div>
+            </div>
+            {% empty %}
+            <div class="no-vets">
+                <p>Врачи пока не добавлены в базу</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -53,11 +53,34 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'vetclinic.urls'
 
 import os
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Добавьте эти настройки
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "clinic" / "static",  # путь к статике приложения
+]
+
+# Убедитесь что приложение добавлено
+INSTALLED_APPS = [
+    # ... стандартные
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'clinic',  # <-- твое приложение
+]
+
+# шаблоны
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +92,9 @@ TEMPLATES = [
         },
     },
 ]
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 WSGI_APPLICATION = 'vetclinic.wsgi.application'

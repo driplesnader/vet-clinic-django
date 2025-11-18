@@ -1,0 +1,148 @@
+{% extends "base_plain.html" %}
+{% load static %}
+
+{% block title %}Главная — Добрый хвост{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-left">
+      <h1 class="hero-title">Добрый хвост — забота о питомцах</h1>
+      <p class="hero-lead">
+        Профессиональная ветеринарная помощь: терапия, хирургия, вакцинация,
+        стерилизация и неотложная помощь.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="{% url 'appointment' %}">Записаться на приём</a>
+        <a class="btn btn-outline" href="{% url 'vets' %}">Наши врачи</a>
+      </div>
+      <ul class="hero-features">
+        <li>Опытные специалисты</li>
+        <li>Современное оборудование</li>
+        <li>Индивидуальный подход</li>
+      </ul>
+    </div>
+
+    <div class="hero-right">
+      <img src="{% static 'img/hero.jpg' %}" alt="животные" class="hero-image" />
+    </div>
+  </div>
+</section>
+
+
+<section class="services">
+  <div class="container">
+    <h2 class="section-title">Наши услуги</h2>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <img src="{% static 'img/service1.jpg' %}" alt="Терапия" />
+        <h3>Терапия</h3>
+        <p>Консультации, диагностика и лечение острых и хронических заболеваний.</p>
+      </article>
+
+      <article class="service-card">
+        <img src="{% static 'img/service2.jpg' %}" alt="Хирургия" />
+        <h3>Хирургия</h3>
+        <p>Плановые и экстренные операции на современном оборудовании.</p>
+      </article>
+
+      <article class="service-card">
+        <img src="{% static 'img/service4.jpg' %}" alt="Хирургия" />
+        <h3>Вакцинация</h3>
+        <p>Комплексные программы вакцинации для собак и кошек.</p>
+      </article>
+
+      <article class="service-card">
+        <img src="{% static 'img/service3.jpg' %}" alt="Хирургия" />
+        <h3>Стерилизация</h3>
+        <p>Безопасная и современная стерилизация с полным уходом после операции.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>О клинике</h2>
+      <p>
+        «Добрый хвост» — частная ветеринарная клиника с вниманием к каждому
+        питомцу. Наши врачи — профильные специалисты с большим опытом, для которых
+        здоровье животных — превыше всего.
+      </p>
+      <a class="btn btn-outline" href="{% url 'vets' %}">Узнать о врачах</a>
+    </div>
+
+    <div class="about-cta">
+      <div class="contact-card">
+        <h4>Телефон</h4>
+        <p class="big">8 (800) 000-00-00</p>
+        <small>Пн–Вс: 09:00–20:00</small>
+      </div>
+
+      <div class="contact-card">
+        <h4>Адрес</h4>
+        <p>г. Сургут, ул. Пушкина, 1</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="vets-preview">
+  <div class="container">
+    <h2 class="section-title">Наши ветеринары</h2>
+
+<div class="vets-grid">
+  {% if vets %}
+    {% for vet in vets %}
+      <article class="vet-card">
+        <img class="vet-avatar"
+             src="{% static 'img/doctor' %}{{ forloop.counter }}.jpg"
+             alt="{{ vet.first_name }} {{ vet.last_name }}" />
+        <div class="vet-info">
+          <div class="vet-name">{{ vet.first_name }} {{ vet.last_name }}</div>
+          <div class="vet-spec">{{ vet.speciality }}</div>
+          {% if vet.description %}
+            <div class="vet-description">{{ vet.description }}</div>
+          {% endif %}
+          <div class="vet-phone">{{ vet.phone }}</div>
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <div class="vets-placeholder">
+      <img src="{% static 'img/doctor1.jpg' %}" alt="placeholder" />
+      <p>Наши специалисты появятся здесь в ближайшее время.</p>
+      <a href="{% url 'appointment' %}" class="btn btn-primary">Записаться</a>
+    </div>
+  {% endif %}
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">Отзывы клиентов</h2>
+
+    <div class="testimonials-grid">
+      <blockquote class="testimonial">
+        <p>Спасибо клинике «Добрый хвост» — быстро помогли нашему Барсику, очень внимательные врачи.</p>
+        <cite>— Ольга</cite>
+      </blockquote>
+
+      <blockquote class="testimonial">
+        <p>Понравилось отношение и результат — рекомендую.</p>
+        <cite>— Максим</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

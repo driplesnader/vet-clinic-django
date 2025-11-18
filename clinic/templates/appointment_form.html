@@ -1,0 +1,45 @@
+{% extends "base_plain.html" %}
+{% block title %}Запись на приём — Добрый хвост{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Записаться на приём</h1>
+  <p class="muted">Заполните форму — мы свяжемся для подтверждения</p>
+
+  <form method="post" class="form-panel" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="form-row">
+      <label>Имя владельца</label>
+      {{ form.owner_name }}
+      {{ form.owner_name.errors }}
+    </div>
+    <div class="form-row">
+      <label>Телефон</label>
+      {{ form.owner_phone }}
+      {{ form.owner_phone.errors }}
+    </div>
+    <div class="form-row">
+      <label>Имя питомца</label>
+      {{ form.pet }}
+    </div>
+    <div class="form-row">
+      <label>Дата и время</label>
+      {{ form.appointment_date }}
+    </div>
+    <div class="form-row">
+      <label>Ветеринар</label>
+      {{ form.veterinarian }}
+    </div>
+    <div class="form-row">
+      <label>Описание</label>
+      {{ form.description }}
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Отправить заявку</button>
+      <a class="btn btn-outline" href="{% url 'home' %}">Отмена</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
+

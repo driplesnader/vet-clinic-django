@@ -1,0 +1,40 @@
+{% extends "base_plain.html" %}
+{% load static %} 
+
+{% block title %}Врачи — Добрый хвост{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="page-title">Наши врачи</h1>
+
+  <div class="doctors-controls">
+    <p class="muted">Профессиональные специалисты по терапевтическим и хирургическим профилям</p>
+  </div>
+
+<div class="doctors-grid">
+  {% if vets %}
+    {% for vet in vets %}
+      <div class="doctor-card">
+        <img class="doctor-avatar" 
+             src="{% static 'img/doctor' %}{{ forloop.counter }}.jpg" 
+             alt="{{ vet.first_name }} {{ vet.last_name }}" />
+        <div class="doctor-body">
+          <h3>{{ vet.first_name }} {{ vet.last_name }}</h3>
+          <p class="muted">{{ vet.speciality }}</p>
+          {% if vet.description %}
+            <p class="vet-description">{{ vet.description }}</p>
+          {% endif %}
+          <p class="muted small">{{ vet.phone }}</p>
+          <a class="btn btn-outline" href="{% url 'appointment' %}">Записаться</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="doctors-empty">
+      <img src="{% static 'img/doctor1.jpg' %}" alt="placeholder" />
+      <p>Мы скоро добавим специалистов. Вы можете оставить заявку на приём.</p>
+      <a class="btn btn-primary" href="{% url 'appointment' %}">Записаться</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

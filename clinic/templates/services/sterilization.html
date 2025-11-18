@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Стерилизация — Добрый хвост{% endblock %}
+
+{% block content %}
+<div class="container service-page">
+    <div class="service-layout">
+        <div class="service-image">
+            <img src="{% static 'img/sterillization.jpg' %}" alt="Стерилизация животных" class="service-main-img">
+        </div>
+
+        <div class="service-content">
+            <h1>Стерилизация животных</h1>
+            
+            <div class="service-description">
+                <h3>О процедуре</h3>
+                <p>Стерилизация — это хирургическая операция, которая предотвращает размножение животных и положительно влияет на их здоровье и поведение.</p>
+                
+                <h3>Преимущества:</h3>
+                <ul class="benefits-list">
+                    <li>✅ Предотвращение нежелательной беременности</li>
+                    <li>✅ Снижение риска онкологических заболеваний</li>
+                    <li>✅ Улучшение поведения и характера</li>
+                    <li>✅ Увеличение продолжительности жизни</li>
+                    <li>✅ Профилактика гормональных нарушений</li>
+                </ul>
+
+                <h3>Подготовка к операции:</h3>
+                <ul>
+                    <li>Голодная диета 8-12 часов перед операцией</li>
+                    <li>Предварительный осмотр ветеринара</li>
+                    <li>Анализы крови при необходимости</li>
+                </ul>
+
+                <div class="pricing">
+                    <h3>Стоимость стерилизации</h3>
+                    <div class="price">от 2000 ₽</div>
+                </div>
+
+                <div class="service-actions">
+                    <a href="{% url 'appointment' %}" class="btn btn-primary">
+                        Записаться
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

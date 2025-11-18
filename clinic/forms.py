@@ -7,5 +7,5 @@ class AppointmentForm(forms.ModelForm):
         fields = ['owner_name', 'owner_phone', 'pet', 'appointment_date', 'veterinarian', 'description']
         widgets = {
             'appointment_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-            'description': forms.Textarea(attrs={'rows': 3}),
+            'description': forms.Textarea(attrs={'rows': 4}),
         }

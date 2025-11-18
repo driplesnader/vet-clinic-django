@@ -28,6 +28,7 @@ class Veterinarian(models.Model):
     last_name = models.CharField(max_length=100, verbose_name="Фамилия")
     speciality = models.CharField(max_length=100, verbose_name="Специальность")
     phone = models.CharField(max_length=20, verbose_name="Телефон")
+    description = models.TextField(blank=True, verbose_name="Краткое описание")  # ← ДОБАВЬТЕ ЭТО
 
     def __str__(self):
         return f"Доктор {self.first_name} {self.last_name} — {self.speciality}"

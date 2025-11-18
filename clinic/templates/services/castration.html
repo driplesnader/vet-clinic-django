@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Кастрация — Добрый хвост{% endblock %}
+
+{% block content %}
+<div class="container service-page">
+    <div class="service-layout">
+        <div class="service-image">
+            <img src="{% static 'img/castration.jpg' %}" alt="Кастрация животных" class="service-main-img">
+        </div>
+
+        <div class="service-content">
+            <h1>Кастрация животных</h1>
+            
+            <div class="service-description">
+                <h3>О процедуре</h3>
+                <p>Кастрация — это хирургическая операция по удалению половых желез у животных, которая помогает контролировать их поведение и улучшает качество жизни.</p>
+                
+                <h3>Преимущества:</h3>
+                <ul class="benefits-list">
+                    <li>✅ Снижение агрессии и беспокойства</li>
+                    <li>✅ Прекращение мечения территории</li>
+                    <li>✅ Профилактика заболеваний половой системы</li>
+                    <li>✅ Улучшение послушания и характера</li>
+                    <li>✅ Снижение риска побегов из дома</li>
+                </ul>
+
+                <h3>Подготовка к операции:</h3>
+                <ul>
+                    <li>Голодная диета 8-12 часов перед операцией</li>
+                    <li>Предварительный осмотр ветеринара</li>
+                    <li>Анализы крови при необходимости</li>
+                </ul>
+
+                <div class="pricing">
+                    <h3>Стоимость кастрации</h3>
+                    <div class="price">от 1500 ₽</div>
+                </div>
+
+                <div class="service-actions">
+                    <a href="{% url 'appointment' %}" class="btn btn-primary">
+                        Записаться
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

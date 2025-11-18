@@ -1,0 +1,11 @@
+{% extends "base_plain.html" %}
+{% block title %}Заявка отправлена — Добрый хвост{% endblock %}
+{% block content %}
+<div class="container success-wrap">
+  <div class="success-panel">
+    <h1>Спасибо — заявка получена!</h1>
+    <p>Ожидайте звонка администратора для подтверждения времени.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary">На главную</a>
+  </div>
+</div>
+{% endblock %}
