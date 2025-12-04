@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("clinic.urls")),  # корень ведёт в наше приложение
+    path("", include("clinic.urls")),
 ]
 
