@@ -225,51 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
         dateField.parentNode.appendChild(hint);
     }
 });
-
 // ============================================
-// Функция 5: Плавная прокрутка к форме записи
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    // Находим все кнопки "Записаться" на странице
-    const bookButtons = document.querySelectorAll('.btn-primary, .btn-outline');
-    
-    bookButtons.forEach(button => {
-        // Проверяем, ведёт ли кнопка на страницу записи
-        const href = button.getAttribute('href');
-        if (href && href.includes('appointment')) {
-            button.addEventListener('click', function(e) {
-                // Если это якорь на той же странице
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        }
-    });
-    
-    // Если пользователь пришёл на главную и нажал "Записаться" с якорем #appointment
-    const hash = window.location.hash;
-    if (hash === '#appointment') {
-        const formSection = document.querySelector('.form-panel, .appointment-section');
-        if (formSection) {
-            setTimeout(() => {
-                formSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 500);
-        }
-    }
-});
-
-// ============================================
-// Функция 6: Динамическое обновление года в подвале
+// Функция 5: Динамическое обновление года в подвале
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const copyright = document.querySelector('.copyright');
