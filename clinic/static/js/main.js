@@ -1,22 +1,19 @@
 // ============================================
 // Функция 1: Адаптивное бургер-меню для мобильных устройств
 // ============================================
-// Создаём иконку-бургер, если её нет в шапке
+// иконка-бургер
 document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.main-nav');
     const headerInner = document.querySelector('.header-inner');
     
-    // Создаём кнопку-бургер
     const burger = document.createElement('div');
     burger.className = 'burger-menu';
     burger.innerHTML = '<span></span><span></span><span></span>';
     
-    // Добавляем бургер в шапку, если его ещё нет
     if (!document.querySelector('.burger-menu') && window.innerWidth <= 768) {
         headerInner.appendChild(burger);
     }
     
-    // Обработчик клика по бургеру
     if (burger) {
         burger.addEventListener('click', function() {
             nav.classList.toggle('nav-active');
@@ -24,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // При изменении размера окна проверяем, нужен ли бургер
     window.addEventListener('resize', function() {
         if (window.innerWidth <= 768) {
             if (!document.querySelector('.burger-menu')) {
